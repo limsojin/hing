@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit Member</title>
+<body>
+</head>
+	<div align="center">
+		<h1> < New Member > </h1>
+		<br />
+		<form action="#" th:action="@{/success}" th:object="${member}" method="POST">
+			<table border="0">
+			<tr>
+				<td>Member ID:</td>
+				<td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+			</tr>
+			<tr>
+				<td>Member Name:</td>
+				<td><input type="text" th:field="*{name}" /></td>
+			</tr>
+			<tr>
+				<td>Member Address:</td>
+				<td><input type="text" th:field="*{address}" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button type ="submit">수정</button></td>
+			</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

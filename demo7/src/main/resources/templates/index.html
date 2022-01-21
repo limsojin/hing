@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Member Information</title>
+</head>
+<body>
+<div align="center">
+	<h1>< Member List ></h1>
+	<a href="/newAccount"> Add New Member</a>
+	<table border="1" cellpadding="10">
+		<thead>
+			<tr>
+				<th>Member Id</th>
+				<th>Member Name</th>
+				<th>Member Address</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="Member : ${ListMember}">
+				<td th:text="${Member.id}">Member ID </td>
+				<td th:text="${Member.name}">Member Name </td>
+				<td th:text="${Member.address}">Member Address </td>
+				<td> <a th:href="@{'/edit/' + ${Member.id}}">Edit</a> 
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				 	 <a th:href="@{'/delete/' + ${Member.id}}">delete</a>
+				</td>				
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>
